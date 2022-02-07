@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import GreetingOutput from "./GreetingOutput";
 
 export class App extends Component {
   // constructor(props) {
@@ -10,7 +11,7 @@ export class App extends Component {
 
   state = {
     planet: "Venus",
-    whatever: "LV-426"
+    whatever: "LV-426",
   };
 
   render() {
@@ -18,7 +19,14 @@ export class App extends Component {
     const { planet } = this.state;
     return (
       <div>
-        <h1>Hello {planet} from class component</h1>
+        <GreetingOutput planet={planet} />
+        <input
+          type="text"
+          placeholder="Enter planet name"
+          onChange={(event) => {
+            this.setState({ planet: event.target.value });
+          }}
+        />
       </div>
     );
   }
