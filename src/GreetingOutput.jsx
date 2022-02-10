@@ -2,9 +2,9 @@ import React from "react";
 
 const GreetingOutput = (props) => {
   return (
-    <div>
-      <h1>Hello {props.planet} from Functional Component</h1>
-    </div>
+    <h1 data-testid="greeting">
+      Hello {props.planet} from Functional Component
+    </h1>
   );
 };
 
